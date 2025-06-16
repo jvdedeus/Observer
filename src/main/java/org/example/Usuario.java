@@ -5,19 +5,10 @@ import java.util.Observer;
 
 public class Usuario implements Observer {
     private String nome;
-    private String tipoArquivo;
     private String ultimaNotificacao;
 
     public Usuario (String nome){
         this.nome = nome;
-    }
-
-    public String getTipoArquivo() {
-        return tipoArquivo;
-    }
-
-    public void setTipoArquivo(String tipoArquivo) {
-        this.tipoArquivo = tipoArquivo;
     }
 
     public String getNome() {

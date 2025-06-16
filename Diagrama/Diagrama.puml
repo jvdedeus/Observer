@@ -1,0 +1,29 @@
+@startuml
+
+class ControleUpload extends java.util.Observable {
+    - status: String
+    + getStatus(): String
+    + setStatus(status: String): void
+    + concluirUpload(): void
+    + cancelarUpload(): void
+    + pausarUpload(): void
+    + toString(): String
+}
+
+class Usuario implements java.util.Observer {
+    - nome: String
+    - tipoArquivo: String
+    - ultimaNotificacao: String
+    + Usuario(nome: String)
+    + getTipoArquivo(): String
+    + setTipoArquivo(tipoArquivo: String): void
+    + getNome(): String
+    + setNome(nome: String): void
+    + getUltimaNotificacao(): String
+    + setUltimaNotificacao(ultimaNotificacao: String): void
+    + update(o: Observable, arg: Object): void
+}
+
+ControleUpload <.. Usuario : notifica
+
+@enduml
